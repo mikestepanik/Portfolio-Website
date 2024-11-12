@@ -13,7 +13,7 @@ const Layout = () => {
                 <span className='tags bottem-tags'>
                     &lt;body&gt;
                     <br />
-                    <span className='bottem-tag-html'>&lt;html&gt;</span>
+                    <span className='bottom-tag-html'>&lt;html&gt;</span>
                 </span>
             </div>
         </div>
