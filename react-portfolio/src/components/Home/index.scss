@@ -1,5 +1,9 @@
-.home-page {
+.container.home-page {
+    // pointer-events: none;
+}
 
+
+.home-page {
     .text-zone {
         position: absolute;
         left: 10%;
@@ -73,6 +77,7 @@ h2 {
     float: left;
     animation: fadeIn 1s 1.8s backwards;
     white-space: nowrap;
+    transition: background-color 0.7s ease;
 
     &:hover {
         background: #ffd700;
