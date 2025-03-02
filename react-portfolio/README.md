@@ -71,5 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-##Had to use this command to get react leaflet to work with my version of react
+## React Leaflet issue. Had to use the below command to get React Leaflet working
 npm install react@18 react-dom@18 react-leaflet@4
+
+## ESM imports does not work 
