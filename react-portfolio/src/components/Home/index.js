@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Logo from './Logo';
 import Loader from 'react-loaders';
+import MatrixBackground from '../MatrixBackground';
+
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = [' ','M', 'i', 'k', 'e']
@@ -24,23 +26,19 @@ const Home = () => {
         'i',
         'n',
         'e',
-    'e', 
-'r']
-
+        'e',
+        'r'
+    ]
 
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
         }, 4000)
     }, [])
-    // useEffect(() => {
-    //     return setTimeout(() => {
-    //         setLetterClass('text-animate-hover')
-    //     }, 4000)
-    // }, [])
 
     return (
         <>
+            <MatrixBackground />
             <div className="container home-page">
                 <div className="text-zone">
                     <h1>
@@ -59,14 +57,13 @@ const Home = () => {
                     </h1>
                     <h2>Embedded Software / C++ Developer / Rocket League Player</h2>
                     <Link to="/contact" className='flat-button'>
-                        CONTATCT ME
+                        CONTACT ME
                     </Link>
                 </div>
                 <Logo />
             </div>
             <Loader type="pacman" />
         </>
-
     );
 }
 
