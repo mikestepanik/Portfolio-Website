@@ -1,0 +1,175 @@
+.processor-logo {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+
+    .processor-svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.3));
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .pcb-traces {
+        .trace {
+            opacity: 0.2;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .pin, .ram-slot, .pcie-slot, .sata-port, .power-connector {
+        transition: all 0.3s ease;
+        opacity: 0.5;
+    }
+
+    .data-packets {
+        .packet {
+            transform-origin: center;
+            animation: none;
+        }
+
+        .packet-dot {
+            filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+        }
+    }
+
+    .processor-text, .component-label {
+        font-family: monospace;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+    }
+
+    .component-label {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+
+    &:hover {
+        .pcb-traces {
+            .trace {
+                opacity: 0.4;
+                stroke-width: 2;
+                filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.3));
+            }
+        }
+
+        .pin, .ram-slot, .pcie-slot, .sata-port, .power-connector {
+            fill: #00ff00;
+            opacity: 1;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+        }
+
+        .data-packets {
+            .packet-0 {
+                animation: trace1 4s linear infinite;
+            }
+            .packet-1 {
+                animation: trace2 4s linear infinite;
+            }
+            .packet-2 {
+                animation: trace3 4s linear infinite;
+            }
+            .packet-3 {
+                animation: trace4 4s linear infinite;
+            }
+            .packet-4 {
+                animation: trace5 4s linear infinite;
+            }
+            .packet-5 {
+                animation: trace6 4s linear infinite;
+            }
+        }
+
+        .processor-text {
+            opacity: 1;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+        }
+
+        .component-label {
+            opacity: 1;
+            filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.3));
+        }
+    }
+}
+
+@keyframes trace1 {
+    0% {
+        transform: translate(150px, 150px);
+    }
+    100% {
+        transform: translate(60px, 90px);
+    }
+}
+
+@keyframes trace2 {
+    0% {
+        transform: translate(250px, 150px);
+    }
+    100% {
+        transform: translate(340px, 90px);
+    }
+}
+
+@keyframes trace3 {
+    0% {
+        transform: translate(150px, 250px);
+    }
+    100% {
+        transform: translate(60px, 310px);
+    }
+}
+
+@keyframes trace4 {
+    0% {
+        transform: translate(250px, 250px);
+    }
+    100% {
+        transform: translate(340px, 310px);
+    }
+}
+
+@keyframes trace5 {
+    0% {
+        transform: translate(300px, 150px);
+    }
+    100% {
+        transform: translate(340px, 150px);
+    }
+}
+
+@keyframes trace6 {
+    0% {
+        transform: translate(300px, 250px);
+    }
+    100% {
+        transform: translate(340px, 250px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .processor-logo {
+        width: 300px;
+        height: 300px;
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .processor-logo {
+        width: 200px;
+        height: 200px;
+        right: 5%;
+    }
+} 
