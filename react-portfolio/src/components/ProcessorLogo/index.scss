@@ -35,7 +35,8 @@
     .data-packets {
         .packet {
             transform-origin: center;
-            animation: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .packet-dot {
@@ -72,6 +73,9 @@
         }
 
         .data-packets {
+            .packet {
+                opacity: 1;
+            }
             .packet-0 {
                 animation: trace1 4s linear infinite;
             }
