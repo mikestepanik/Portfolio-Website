@@ -47,7 +47,7 @@
             }
 
             &:hover {
-                color: #ffd700;
+                color: #0f0;
 
                 svg {
                     opacity: 0;
@@ -94,7 +94,7 @@
 
         a.active {
             svg {
-                color: #ffd700;
+                color: #0f0;
             }
         }
     }
@@ -115,9 +115,9 @@
                 display: block;
                 font-size: 15px;
                 line-height: 16px;
-
+                //LinkedIn and GitHub icons
                 &:hover svg {
-                    color: #ffd700;
+                    color: #0f0;
                 }
 
             }

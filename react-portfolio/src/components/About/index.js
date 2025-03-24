@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngular, faCss3, faGit, faGitAlt, faGitSquare, faGithub, faHtml5, faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders';
+import MatrixBackground from '../MatrixBackground';
 
 const About = () => {
     
@@ -17,6 +18,7 @@ const About = () => {
 
     return (
         <>
+        <MatrixBackground />
         <div className="container about-page">
             <div className='text-zone'>
                 <h1>
@@ -29,7 +31,7 @@ const About = () => {
                 <p>
                     I'm a very ambitious Software Engineer looking for a role in established
                     software related company with the opportunity to work with the latest technologies on challenging
-                    and divers projects. 
+                    and diverse projects. 
                 </p>
                 <p> 
                     I'm quietly confident, naturally curious, and perpetually working on
