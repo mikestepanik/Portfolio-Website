@@ -4,6 +4,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import MatrixBackground from '../MatrixBackground'
 
 const Contact = () => {
 
@@ -41,6 +42,7 @@ const Contact = () => {
 
     return (
         <>
+            <MatrixBackground />
             <div className='container contact-page'>
                 <div className='text-zone'>
                     <h1>
@@ -51,7 +53,7 @@ const Contact = () => {
                         />
                     </h1>
                     <p>
-                        I am interested in freelance oppertunities - especially ambitious or large projects.
+                        I am interested in freelance oppertunities - especially ambitious for large projects.
                         However, if you have another request or question, don't hesitate to reach out to me using
                         the below form. Thanks!
                     </p>

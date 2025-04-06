@@ -35,28 +35,28 @@
             margin-bottom: 40px;
             letter-spacing: 2px;
 
-            &:before {
-                content: '';
-                font-family: 'La Belle Aurore';
-                color: #0f0;
-                font-size: 18px;
-                position: absolute;
-                margin-top: -40px;
-                left: -15px;
-                opacity: 0.6;
-            }
+            // &:before {
+            //     content: '';
+            //     font-family: 'La Belle Aurore';
+            //     color: #0f0;
+            //     font-size: 18px;
+            //     position: absolute;
+            //     margin-top: -40px;
+            //     left: -15px;
+            //     opacity: 0.6;
+            // }
 
-            &:after {
-                content: '';
-                font-family: 'La Belle Aurore';
-                color: #0f0;
-                font-size: 18px;
-                position: absolute;
-                margin-top: 18px;
-                margin-left: 20px;
-                animation: fadeIn 1.7s 1s backwards;
-                opacity: 0.6;
-            }
+            // &:after {
+            //     content: '';
+            //     font-family: 'La Belle Aurore';
+            //     color: #0f0;
+            //     font-size: 18px;
+            //     position: absolute;
+            //     margin-top: 18px;
+            //     margin-left: 20px;
+            //     animation: fadeIn 1.7s 1s backwards;
+            //     opacity: 0.6;
+            // }
         }
 
         p {
@@ -138,6 +138,30 @@
             &:hover {
                 background: rgba(0, 255, 0, 0.2);
                 box-shadow: 0 0 30px 0px rgba(0, 255, 0, 0.5);
+            }
+
+            .cpp-icon {
+                width: 120px;
+                height: 120px;
+                filter: drop-shadow(0 0 10px rgba(239, 216, 29, 0.5));
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: drop-shadow(0 0 15px rgba(239, 216, 29, 0.7));
+                }
+            }
+
+            .csharp-icon {
+                width: 120px;
+                height: 120px;
+                filter: drop-shadow(0 0 10px rgba(155, 79, 150, 0.5));
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: drop-shadow(0 0 15px rgba(155, 79, 150, 0.7));
+                }
             }
         }
 
