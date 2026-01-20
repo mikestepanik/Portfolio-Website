@@ -5,6 +5,7 @@ import Layout from './components/Layout'
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import RocketLeagueClips from './components/RocketLeagueClips';
 import NeonCursor from './components/NeonCursor';
 // import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 // import { useEffect, useState } from 'react';
@@ -18,7 +19,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} /> 
         <Route path= "about" element={<About />} /> 
-        <Route path= "contact" element={<Contact />} />    
+        <Route path= "contact" element={<Contact />} />
+        <Route path= "rocket-league-clips" element={<RocketLeagueClips />} />    
       </Route> 
     </Routes>
    </>
