@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.scss';
 import MatrixBackground from '../MatrixBackground';
 import Loader from 'react-loaders';
+import AnimatedLetters from '../AnimatedLetters';
 
 const RocketLeagueClips = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [letterClass, setLetterClass] = useState('text-animate');
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover');
+        }, 3000);
+    }, []);
 
     /**
      * Helper function to normalize video URLs
@@ -185,7 +193,15 @@ const RocketLeagueClips = () => {
         <>
             <MatrixBackground />
             <div className="container rocket-league-clips-page">
-                <h1 className="page-title">Rocket League Clips</h1>
+                <div className="title-wrapper">
+                    <h1>
+                        <AnimatedLetters 
+                            letterClass={letterClass}
+                            strArray={['R', 'o', 'c', 'k', 'e', 't', ' ', 'L', 'e', 'a', 'g', 'u', 'e', ' ', 'C', 'l', 'i', 'p', 's']}
+                            idx={15}
+                        />
+                    </h1>
+                </div>
             
             <div className="videos-grid">
                 {videos.map((video) => (

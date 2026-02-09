@@ -8,11 +8,57 @@
     position: relative;
     top: 5% !important; // Keep the 5% top offset for consistency
     padding-bottom: 20px;
+
+    // Custom scrollbar styling - Chrome, Safari, Edge
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 255, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 255, 0, 0.8) 0%,
+            rgba(0, 255, 0, 0.6) 50%,
+            rgba(0, 255, 0, 0.8) 100%
+        );
+        border-radius: 10px;
+        border: 1px solid rgba(0, 255, 0, 0.3);
+        box-shadow: 
+            0 0 10px rgba(0, 255, 0, 0.5),
+            inset 0 0 5px rgba(0, 255, 0, 0.3);
+
+        &:hover {
+            background: linear-gradient(
+                180deg,
+                rgba(0, 255, 0, 0.9) 0%,
+                rgba(0, 255, 0, 0.7) 50%,
+                rgba(0, 255, 0, 0.9) 100%
+            );
+            box-shadow: 
+                0 0 15px rgba(0, 255, 0, 0.7),
+                inset 0 0 8px rgba(0, 255, 0, 0.4);
+        }
+
+        &:active {
+            background: rgba(0, 255, 0, 0.9);
+        }
+    }
+
+    // Firefox scrollbar styling
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 0, 0.7) rgba(0, 0, 0, 0.8);
 }
 
 .rocket-league-clips-page {
     padding: 20px;
     padding-top: 40px;
+    padding-left: 80px; // Offset content so it doesn't sit under the 60px sidebar
     padding-bottom: 60px; // Extra padding at bottom for better scrolling
     overflow: visible;
     min-height: calc(100vh - 40px); // Full viewport height minus padding
@@ -26,39 +72,22 @@
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 
-    .page-title {
-        font-size: 53px;
-        font-family: 'Coolvetica';
-        color: #ffd700;
-        margin-bottom: 40px;
+    .title-wrapper {
+        width: 100%;
         text-align: center;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        font-weight: 400;
+        margin-bottom: 5px;
         position: relative;
-        letter-spacing: 2px;
 
-        &::before {
-            content: '';
-            font-family: 'La Belle Aurore';
-            color: #ffd700;
-            font-size: 18px;
-            position: absolute;
-            margin-top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.6;
-        }
-
-        &::after {
-            content: '';
-            font-family: 'La Belle Aurore';
-            color: #ffd700;
-            font-size: 18px;
-            position: absolute;
-            margin-top: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.6;
+        h1 {
+            font-size: 53px;
+            font-family: 'Coolvetica';
+            color: #fff;
+            font-weight: 400;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
     }
 
@@ -326,12 +355,9 @@
 
     // Responsive adjustments
     @media (max-width: 768px) {
-        .page-title {
-            font-size: 40px;
-
-            &::before,
-            &::after {
-                display: none;
+        .title-wrapper {
+            h1 {
+                font-size: 40px;
             }
         }
 
@@ -354,6 +380,42 @@
     @media screen and (max-width: 1200px) {
         .rocket-league-clips-page {
             padding: 20px 10px;
+            padding-left: 70px; // Slightly smaller left padding on narrower screens
         }
     }
+
+    // Vertical / portrait monitors support
+    @media screen and (orientation: portrait) {
+        // Make the page use the full vertical space
+        .container.rocket-league-clips-page {
+            height: 100vh !important;
+            min-height: 100vh;
+            max-height: 100vh !important;
+            top: 0 !important;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .title-wrapper {
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        .videos-grid {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            padding: 0 8px;
+        }
+
+        .video-modal {
+            max-width: 100%;
+            max-height: 85vh;
+
+            .expanded-video {
+                max-height: 60vh;
+            }
+        }
+    }
+
 }
